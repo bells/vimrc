@@ -1,3 +1,11 @@
+"encoding
+set encoding=utf-8   "vim内部使用的字符编码方式，包括vim的buffer，菜单文本等
+set termencoding=utf-8 "vim所工作的终端的字符编码方式
+set fileencoding=utf-8   "vim中当前编辑的文件的字符编码方式,vim保存文件时也采用该字符编码
+set fileencodings=utf-8  "vim启动时会按照所列字符编码方式逐一探测...
+set langmenu=zh_CN.utf-8
+language messages zh_CN.utf-8 "vim 提示信息乱码的解决
+
 "vim插件管理器：vundle 配置
 set nocompatible "关闭兼容vi模式
 filetype off   " vundle required!
@@ -68,7 +76,6 @@ Bundle 'https://github.com/corntrace/bufexplorer.git'
 call vundle#end()           " required!
 filetype plugin indent on   " required!
 
-
 "fancy 判断是终端还是Gvim
 if has("gui_running")
 		let g:isGUI = 1
@@ -88,14 +95,6 @@ set cursorcolumn
 "启动时最大化
 autocmd GUIEnter * simalt ~x
 
-"encoding
-set encoding=utf-8   "vim内部使用的字符编码方式，包括vim的buffer，菜单文本等
-set termencoding=utf-8 "vim所工作的终端的字符编码方式
-set fileencoding=utf-8   "vim中当前编辑的文件的字符编码方式,vim保存文件时也采用该字符编码
-set fileencodings=utf-8  "vim启动时会按照所列字符编码方式逐一探测...
-
-" vim 提示信息乱码的解决
-language messages zh_CN.utf-8
 
 if g:isGUI
 	colorscheme lucius
