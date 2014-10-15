@@ -10,68 +10,67 @@ language messages zh_CN.utf-8 "vim 提示信息乱码的解决
 set nocompatible "关闭兼容vi模式
 filetype off   " vundle required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required!
+Plugin 'gmarik/Vundle.vim'
 
 " Color scheme
-Bundle 'https://github.com/altercation/vim-colors-solarized.git'
-Bundle 'https://github.com/tpope/vim-vividchalk.git'
-Bundle 'https://github.com/jonathanfilip/vim-lucius.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'https://github.com/tpope/vim-vividchalk.git'
+Plugin 'https://github.com/jonathanfilip/vim-lucius.git'
 
 "Syntax
-"Bundle 'cscope.vim'
+"Plugin 'cscope.vim'
 "A plugin for visually displaying indent levels in Vim(用来显示对齐线)
-Bundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
+Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 "indent
 "Vastly improved vim's javascript indentation
-Bundle "pangloss/vim-javascript"
+"Plugin 'pangloss/vim-javascript'
 
 "ftplugin
 "python代码检查功能 插件
-Bundle 'pyflakes.vim'
+Plugin 'pyflakes.vim'
 "python代码折叠
-Bundle 'https://github.com/vim-scripts/Efficient-python-folding.git'
+Plugin 'https://github.com/vim-scripts/Efficient-python-folding.git'
 "vim代码自动补全插件
-Bundle 'https://github.com/vim-scripts/OmniCppComplete.git'
-Bundle 'https://github.com/xolox/vim-misc.git'
-Bundle 'https://github.com/xolox/vim-lua-ftplugin.git'
+Plugin 'https://github.com/vim-scripts/OmniCppComplete.git'
+Plugin 'https://github.com/xolox/vim-misc.git'
+Plugin 'https://github.com/xolox/vim-lua-ftplugin.git'
 "
-Bundle 'xml.vim'
+Plugin 'xml.vim'
 
 " utility
 " a tree explorer plugin for navigating the filesystem
-Bundle 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
 "VIM批量注释与反注释插件
-Bundle 'https://github.com/scrooloose/nerdcommenter.git'
+Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 " .c和.h文件快速切换
-Bundle 'a.vim'   
+Plugin 'a.vim'   
 "自动生成各种注释插件 
-Bundle 'DoxygenToolkit.vim'  
+Plugin 'DoxygenToolkit.vim'  
 "源代码阅读插件
-Bundle 'taglist.vim'
+Plugin 'taglist.vim'
 "查找python文档
-Bundle 'pydoc.vim'
+Plugin 'pydoc.vim'
 "python_fn 提供众多方便编辑python效率的快捷键
-Bundle 'https://github.com/Crapworks/python_fn.vim.git'
+Plugin 'https://github.com/Crapworks/python_fn.vim.git'
 "pydiction 通过tab键补全python代码
-Bundle 'https://github.com/rkulla/pydiction.git'
+Plugin 'https://github.com/rkulla/pydiction.git'
 "HTML5 omnicomplete function and syntax for vim
-Bundle 'https://github.com/othree/html5.vim.git'
+Plugin 'https://github.com/othree/html5.vim.git'
 "Unite and create user interfaces
-Bundle 'https://github.com/Shougo/unite.vim.git'
+Plugin 'https://github.com/Shougo/unite.vim.git'
 "Interactive command execution in Vim
-Bundle 'https://github.com/Shougo/vimproc.vim.git'
+Plugin 'https://github.com/Shougo/vimproc.vim.git'
 "The ultimate statusline/prompt utility
-Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+Plugin 'https://github.com/Lokaltog/vim-powerline.git'
 "The Sublime Text style multiple selectors for Vim
-Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
+Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 "在缓冲间快速切换
-Bundle 'https://github.com/corntrace/bufexplorer.git'
+Plugin 'https://github.com/corntrace/bufexplorer.git'
 
 call vundle#end()           " required!
 filetype plugin indent on   " required!
@@ -257,7 +256,7 @@ let g:pydiction_location = '/home/bells/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 10
 
 "nerdtree
-autocmd VimEnter * NERDTree workspace "vim启动时，加载nerdTree
+autocmd VimEnter * NERDTree "vim启动时，加载nerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "当只剩下nerdtree窗口时，自动关闭
 nnoremap <F10> :exe 'NERDTreeToggle'<CR> "F10 关闭/开启nerdTree
 let NERDChristmasTree=1 "让Tree装饰的多姿多彩漂亮点
