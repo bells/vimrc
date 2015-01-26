@@ -71,6 +71,8 @@ Plugin 'https://github.com/Lokaltog/vim-powerline.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 "在缓冲间快速切换
 Plugin 'https://github.com/corntrace/bufexplorer.git'
+"
+Plugin 'https://github.com/xolox/vim-session.git'
 
 call vundle#end()           " required!
 filetype plugin indent on   " required!
@@ -256,7 +258,7 @@ let g:pydiction_location = '/home/bells/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 10
 
 "nerdtree
-autocmd VimEnter * NERDTree "vim启动时，加载nerdTree
+"autocmd VimEnter * NERDTree "vim启动时，加载nerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "当只剩下nerdtree窗口时，自动关闭
 nnoremap <F10> :exe 'NERDTreeToggle'<CR> "F10 关闭/开启nerdTree
 let NERDChristmasTree=1 "让Tree装饰的多姿多彩漂亮点
@@ -270,3 +272,5 @@ let NERDTreeShowLineNumbers=1  "是否默认显示行号
 let NERDTreeWinPos='left'  "窗口位置
 let NERDTreeWinSize=31   "窗口宽度
 let NERDTreeChDirMode=1
+
+let g:session_autosave = 'no'
