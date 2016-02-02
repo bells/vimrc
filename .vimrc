@@ -59,6 +59,8 @@ Plugin 'pydoc.vim'
 Plugin 'https://github.com/Crapworks/python_fn.vim.git'
 "pydiction 通过tab键补全python代码
 Plugin 'https://github.com/rkulla/pydiction.git'
+"提供很好的python代码提示，以及shift+k 提供 __doc__ 展示功能
+Plugin 'https://github.com/davidhalter/jedi-vim.git'
 "HTML5 omnicomplete function and syntax for vim
 Plugin 'https://github.com/othree/html5.vim.git'
 "Unite and create user interfaces
@@ -92,6 +94,7 @@ set timeoutlen=2000
 
 "设置光标所在列高亮 简写是 set cuc . 另外一个： set cc=8  设置第8列高亮
 set cursorcolumn
+set cc=120
 
 "启动时最大化
 autocmd GUIEnter * simalt ~x
@@ -267,10 +270,15 @@ let NERDTreeBookmarksFile=$VIM.'\Data\NerdBookmarks.txt' "指定书签文件
 let NERDTreeMouseMode=2  " 指定鼠标模式
 let NERDTreeShowBookmarks=1 "是否默认显示书签列表
 let NERDTreeShowFiles=1     " 是否默认显示文件
-let NERDTreeShowHidden=1   "是否默认显示隐藏文件
+let NERDTreeShowHidden=0   "是否默认显示隐藏文件
 let NERDTreeShowLineNumbers=1  "是否默认显示行号
 let NERDTreeWinPos='left'  "窗口位置
 let NERDTreeWinSize=31   "窗口宽度
 let NERDTreeChDirMode=1
+let NERDTreeIgnore=['\.pyc']
 
 let g:session_autosave = 'no'
+
+"vim-indent-guides
+hi IndentGuidesOdd  ctermbg=white
+hi IndentGuidesEven ctermbg=darkgrey
