@@ -76,6 +76,12 @@ Plugin 'https://github.com/corntrace/bufexplorer.git'
 "
 Plugin 'https://github.com/xolox/vim-session.git'
 
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
 call vundle#end()           " required!
 filetype plugin indent on   " required!
 
@@ -131,8 +137,7 @@ set hlsearch
 set incsearch
 
 " 不自动换行
-set expandtab
-set nowrap
+"set nowrap
 
 " 打开高亮
 syntax on
@@ -282,3 +287,13 @@ let g:session_autosave = 'no'
 "vim-indent-guides
 hi IndentGuidesOdd  ctermbg=white
 hi IndentGuidesEven ctermbg=darkgrey
+
+
+"ultisnips的配置 Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-m>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
